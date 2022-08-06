@@ -54,7 +54,7 @@ const submissionService = create<SubmissionServiceI>((set, get) => {
       returnData.isValid = true;
       returnData.title = title;
     } catch (e) {
-      console.error("submissionService::validateUrl", e);
+      console.log("submissionService::validateUrl", e);
     }
 
     return returnData;

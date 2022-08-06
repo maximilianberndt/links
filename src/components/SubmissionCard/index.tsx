@@ -14,6 +14,7 @@ import { Svg } from "../Common/Svg";
 import { useState, FormEvent } from "react";
 import { ButtonRound } from "../Common/ButtonRound";
 import { Input } from "../Common/Input";
+import { Link } from "react-router-dom";
 
 interface SubmissionCardI {
   submission: SubmissionT;
@@ -39,7 +40,8 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
     if (editSuccessful) {
       setIsEdit(false);
     } else {
-      // alert("Error");
+      // Reset to original url when new url is not valid
+      setValue(submission.url);
     }
   };
 
@@ -63,13 +65,13 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
 
       <ButtonWrapper>
         <ButtonRound
-          as="a"
-          href="/"
+          as={Link}
+          to={submission.id}
           css={{
             "--transition-delay": "0.04s",
           }}
         >
-          View
+          <Svg icon="eye" width={2} height={2} />
         </ButtonRound>
 
         <ButtonRound

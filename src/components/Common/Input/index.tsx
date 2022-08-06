@@ -1,8 +1,12 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { StyledInput } from "./styles";
 
 const Input = ({ value, onChange = (value) => {}, ...others }) => {
   const [_value, setValue] = useState(value);
+
+  useEffect(() => {
+    setValue(value);
+  }, [value]);
 
   return (
     <StyledInput

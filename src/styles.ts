@@ -49,7 +49,6 @@ const globalStyles = globalCss({
     backgroundColor: "$black",
     color: "white",
     overscrollBehavior: "none",
-    overflowX: "hidden",
   },
   button: {
     cursor: "pointer",

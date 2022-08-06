@@ -20,8 +20,9 @@ const StyledSubmissionCard = styled("div", {
   overflow: "hidden",
 
   [`& ${StyledButtonRound}`]: {
+    color: "$black",
     transition: "opacity 0.2s, transform 0.3s",
-		transitionDelay: "var(--transition-delay)",
+    transitionDelay: "var(--transition-delay)",
     opacity: 0,
     transform: "translateY(25%)",
   },
@@ -60,6 +61,7 @@ const Form = styled("form", {
 
   [`& ${StyledInput}`]: {
     width: "100%",
+    color: "$white",
   },
 });
 
