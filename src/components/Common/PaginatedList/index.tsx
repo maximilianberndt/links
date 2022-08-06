@@ -5,10 +5,17 @@ import { StyledPaginatedList, List, ListItem } from "./styles";
 interface PaginatedListI {
   items: ReactElement[];
   itemsPerPage?: number;
+  startIndex?: number;
+  onIndexChange?: (index: number) => void;
 }
 
-const PaginatedList = ({ items = [], itemsPerPage = 5 }: PaginatedListI) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const PaginatedList = ({
+  items = [],
+  itemsPerPage = 5,
+  startIndex = 0,
+  onIndexChange,
+}: PaginatedListI) => {
+  const [currentIndex, setCurrentIndex] = useState(startIndex);
 
   // Figure out which items to display on the current page
   const currentItems: ReactElement[] = useMemo(() => {
@@ -19,6 +26,10 @@ const PaginatedList = ({ items = [], itemsPerPage = 5 }: PaginatedListI) => {
       (item, index) => index >= startIndex && index < endIndex
     );
   }, [items, currentIndex, itemsPerPage]);
+
+  useEffect(() => {
+    if (onIndexChange) onIndexChange(currentIndex);
+  }, [currentIndex]);
 
   if (!currentItems?.length) return null;
 

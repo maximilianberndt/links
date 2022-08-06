@@ -4,6 +4,8 @@ import { SubmissionInput } from "../../components/SubmissionInput";
 import { submissionService } from "../../services/submissionService";
 import { StyledHome } from "./styles";
 
+let lastIndex = 0;
+
 const Home = () => {
   const submissions = submissionService((state) => state.submissions);
 
@@ -13,6 +15,10 @@ const Home = () => {
 
       <PaginatedList
         itemsPerPage={2}
+				startIndex={lastIndex}
+        onIndexChange={(index) => {
+          lastIndex = index;
+        }}
         items={submissions.map((submission) => (
           <SubmissionCard key={submission.id} submission={submission} />
         ))}
