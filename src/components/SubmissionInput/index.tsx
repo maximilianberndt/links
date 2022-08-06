@@ -1,7 +1,7 @@
 import { StyledSubmissionInput, ButtonWrapper, AddButton } from "./styles";
 import { Input } from "../../components/Common/Input";
 import { submissionService } from "../../services/submissionService";
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { Svg } from "../Common/Svg";
 
 const SubmissionInput = () => {
@@ -28,9 +28,9 @@ const SubmissionInput = () => {
   return (
     <StyledSubmissionInput onSubmit={onSubmit}>
       <Input
-        value={""}
+        value={value}
         placeholder="Add Website"
-        onChange={(value) => setValue(value)}
+        onChange={(e) => setValue(e.target.value)}
       />
 
       <ButtonWrapper>

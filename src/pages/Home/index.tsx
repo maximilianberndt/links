@@ -15,7 +15,7 @@ const Home = () => {
 
       <PaginatedList
         itemsPerPage={2}
-				startIndex={lastIndex}
+        startIndex={lastIndex}
         onIndexChange={(index) => {
           lastIndex = index;
         }}

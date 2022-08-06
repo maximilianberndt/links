@@ -54,7 +54,7 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
       >
         {isEdit ? (
           <Form onSubmit={edit}>
-            <Input onChange={(value) => setValue(value)} value={value} />
+            <Input onChange={(e) => setValue(e.target.value)} value={value} />
           </Form>
         ) : (
           <Headline as="a" href={submission.url} target="_blank" rel="noopener">
@@ -66,7 +66,7 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
       <ButtonWrapper>
         <ButtonRound
           as={Link}
-          to={submission.id}
+          to={`/submission/${submission.id}`}
           css={{
             "--transition-delay": "0.04s",
           }}

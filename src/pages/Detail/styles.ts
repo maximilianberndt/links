@@ -1,3 +1,4 @@
+import { StyledHeadline } from "../../components/Common/Headline/styles";
 import { StyledText } from "../../components/Common/Text/styles";
 import { styled } from "../../styles";
 
@@ -11,10 +12,14 @@ const Subheadline = styled(StyledText, {
   marginBottom: "$space$1",
 });
 
+const StyledLink = styled(StyledHeadline, {
+	wordBreak: "break-word"
+})
+
 const Back = styled(StyledText, {
   display: "inline-block",
   color: "$grayLight",
   marginBottom: "$space$5",
 });
 
-export { StyledDetail, Subheadline, Back };
+export { StyledDetail, Subheadline, Back, StyledLink };

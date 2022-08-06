@@ -4,7 +4,8 @@ import { Headline } from "../Common/Headline";
 import { Home } from "../../pages/Home";
 import { Detail } from "../../pages/Detail";
 import { Svgs } from "../Svgs";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const App = () => {
   globalStyles();
@@ -18,8 +19,7 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path=":id" element={<Detail />} />
-            {/* <Route path="/detail/:id" component={<Detail />} /> */}
+            <Route path="/submission/:id" element={<Detail />} />
           </Routes>
         </main>
       </StyledApp>
