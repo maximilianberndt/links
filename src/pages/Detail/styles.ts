@@ -13,8 +13,8 @@ const Subheadline = styled(StyledText, {
 });
 
 const StyledLink = styled(StyledHeadline, {
-	wordBreak: "break-word"
-})
+  wordBreak: "break-word",
+});
 
 const Back = styled(StyledText, {
   display: "inline-block",
@@ -22,4 +22,10 @@ const Back = styled(StyledText, {
   marginBottom: "$space$5",
 });
 
-export { StyledDetail, Subheadline, Back, StyledLink };
+const TextWrapper = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: "$space$2",
+});
+
+export { StyledDetail, Subheadline, Back, StyledLink, TextWrapper };

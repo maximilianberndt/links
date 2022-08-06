@@ -15,6 +15,7 @@ import { useState, FormEvent } from "react";
 import { ButtonRound } from "../Common/ButtonRound";
 import { Input } from "../Common/Input";
 import { Link } from "react-router-dom";
+import { GenerativeIcon } from "../GenerativeIcon";
 
 interface SubmissionCardI {
   submission: SubmissionT;
@@ -52,6 +53,8 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
           flexGrow: isEdit ? 1 : 0,
         }}
       >
+        <GenerativeIcon seed={submission.url} />
+
         {isEdit ? (
           <Form onSubmit={edit}>
             <Input onChange={(e) => setValue(e.target.value)} value={value} />

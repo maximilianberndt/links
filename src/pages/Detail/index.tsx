@@ -1,8 +1,15 @@
 import { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Headline } from "../../components/Common/Headline";
+import { GenerativeIcon } from "../../components/GenerativeIcon";
 import { submissionService } from "../../services/submissionService";
-import { StyledDetail, Subheadline, Back, StyledLink } from "./styles";
+import {
+  StyledDetail,
+  Subheadline,
+  Back,
+  StyledLink,
+  TextWrapper,
+} from "./styles";
 
 const Detail = () => {
   const params = useParams();
@@ -25,9 +32,14 @@ const Detail = () => {
       </Back>
 
       <Subheadline>Thank you for submitting:</Subheadline>
-      <StyledLink as="a" href={submission.url} rel="noopener" target="_blank">
-        {submission.url}
-      </StyledLink>
+
+      <TextWrapper>
+        <GenerativeIcon seed={submission.url} />
+
+        <StyledLink as="a" href={submission.url} rel="noopener" target="_blank">
+          {submission.url}
+        </StyledLink>
+      </TextWrapper>
     </StyledDetail>
   );
 };

@@ -37,6 +37,8 @@ const StyledSubmissionCard = styled("div", {
 
 const TextWrapper = styled("div", {
   display: "grid",
+  gridAutoFlow: "column",
+	alignItems: "center",
   gap: "$space$1",
   zIndex: 2,
 });
