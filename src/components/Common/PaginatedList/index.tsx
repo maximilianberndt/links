@@ -10,7 +10,7 @@ interface PaginatedListI {
 const PaginatedList = ({ items = [], itemsPerPage = 5 }: PaginatedListI) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-	// Figure out which items to display on the current page
+  // Figure out which items to display on the current page
   const currentItems: ReactElement[] = useMemo(() => {
     const startIndex = currentIndex * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -32,6 +32,7 @@ const PaginatedList = ({ items = [], itemsPerPage = 5 }: PaginatedListI) => {
 
       <Pagination
         maxItems={Math.ceil(items.length / itemsPerPage)}
+        currentIndex={currentIndex}
         setIndex={setCurrentIndex}
       />
     </StyledPaginatedList>

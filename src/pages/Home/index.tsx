@@ -12,7 +12,7 @@ const Home = () => {
       <SubmissionInput />
 
       <PaginatedList
-        itemsPerPage={3}
+        itemsPerPage={2}
         items={submissions.map((submission) => (
           <SubmissionCard key={submission.id} submission={submission} />
         ))}
