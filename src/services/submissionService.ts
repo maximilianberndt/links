@@ -32,7 +32,14 @@ const submissionService = create<SubmissionServiceI>((set, get) => {
 
   const sanitizeUrl = (url: string): string => {
     if (!url) return "";
-    return url.trim();
+    url = url.trim();
+
+		// Add "http://" to the start of the url if there is none
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+      url = `http://${url}`;
+    }
+
+    return url;
   };
 
   const validateUrl = (
@@ -48,7 +55,7 @@ const submissionService = create<SubmissionServiceI>((set, get) => {
     try {
       const { host } = new URL(sanitizedUrl);
 
-      // No top level domain in url
+      // Url is invalid because there is no top level domain in url
       if (!host.includes(".")) return returnData;
 
       // Remove "www." from start of the host

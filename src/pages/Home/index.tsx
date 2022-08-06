@@ -12,10 +12,10 @@ const Home = () => {
       <SubmissionInput />
 
       <PaginatedList
+        itemsPerPage={3}
         items={submissions.map((submission) => (
           <SubmissionCard key={submission.id} submission={submission} />
         ))}
-        itemsPerPage={20}
       />
     </StyledHome>
   );
