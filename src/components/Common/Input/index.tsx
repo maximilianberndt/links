@@ -1,7 +1,13 @@
 import { useState, ChangeEvent, useEffect } from "react";
 import { StyledInput } from "./styles";
 
-const Input = ({ value, onChange = (value) => {}, ...others }) => {
+interface InputI  {
+	value: any,
+	onChange: (value: any) => void,
+	[others: string]: unknown;
+}
+
+const Input = ({ value, onChange = (value) => {}, ...others }: InputI) => {
   const [_value, setValue] = useState(value);
 
   useEffect(() => {

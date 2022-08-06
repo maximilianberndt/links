@@ -1,6 +1,11 @@
 import { StyledText } from "./styles";
 
-const Text = ({ children, ...others }) => (
+interface TextI {
+  children: React.ReactNode;
+	[others: string]: unknown;
+}
+
+const Text = ({ children, ...others }: TextI) => (
   <StyledText {...others}>{children}</StyledText>
 );
 

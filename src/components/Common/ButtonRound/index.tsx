@@ -1,6 +1,11 @@
 import { StyledButtonRound } from "./styles";
 
-const ButtonRound = ({ children, ...others }) => (
+interface ButtonRoundI {
+  children: React.ReactNode;
+	[others: string]: unknown;
+}
+
+const ButtonRound = ({ children, ...others }: ButtonRoundI) => (
   <StyledButtonRound {...others}>{children}</StyledButtonRound>
 );
 

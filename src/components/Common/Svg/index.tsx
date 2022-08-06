@@ -1,6 +1,12 @@
 import { StyledSvg } from "./styles";
 
-const Svg = ({ icon, width = 1, height = 1 }) => {
+interface SvgI {
+  icon: "plus" | "eye";
+  width?: number;
+  height?: number;
+}
+
+const Svg = ({ icon, width = 1, height = 1 }: SvgI) => {
   if (!icon) return null;
 
   return (

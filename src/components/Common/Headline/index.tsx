@@ -1,6 +1,11 @@
 import { StyledHeadline } from "./styles";
 
-const Headline = ({ children, ...others }) => (
+interface HeadlineI  {
+	children: React.ReactNode,
+	[others: string]: unknown;
+}
+
+const Headline = ({ children, ...others }: HeadlineI) => (
   <StyledHeadline {...others}>{children}</StyledHeadline>
 );
 

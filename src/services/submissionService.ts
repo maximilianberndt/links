@@ -48,6 +48,9 @@ const submissionService = create<SubmissionServiceI>((set, get) => {
     try {
       const { host } = new URL(sanitizedUrl);
 
+      // No top level domain in url
+      if (!host.includes(".")) return returnData;
+
       // Remove "www." from start of the host
       const title = host.startsWith("www.") ? host.slice(4) : host;
 
