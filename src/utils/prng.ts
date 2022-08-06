@@ -1,5 +1,6 @@
 // Seed generating function from string
 // From https://github.com/bryc/code/blob/master/jshash/PRNGs.md#addendum-a-seed-generating-functions
+// @ts-ignore
 const xmur3 = (str) => {
   for (var i = 0, h = 1779033703 ^ str.length; i < str.length; i++) {
     h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
@@ -14,6 +15,7 @@ const xmur3 = (str) => {
 
 // Generate random number based on seed
 // From https://stackoverflow.com/a/47593316
+// @ts-ignore
 const mulberry32 = (a) => {
   let t = (a += 0x6d2b79f5);
   t = Math.imul(t ^ (t >>> 15), t | 1);
