@@ -15,7 +15,7 @@ import { useState, FormEvent } from "react";
 import { ButtonRound } from "../Common/ButtonRound";
 import { Input } from "../Common/Input";
 import { Link } from "react-router-dom";
-import { GenerativeIcon } from "../GenerativeIcon";
+import { SubmissionIcon } from "../SubmissionIcon";
 
 interface SubmissionCardI {
   submission: SubmissionT;
@@ -47,22 +47,29 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
   };
 
   return (
-    <StyledSubmissionCard>
+    <StyledSubmissionCard onMouseLeave={() => setIsEdit(false)}>
       <TextWrapper
         css={{
           flexGrow: isEdit ? 1 : 0,
         }}
       >
-        <GenerativeIcon seed={submission.url} />
-
         {isEdit ? (
           <Form onSubmit={edit}>
             <Input onChange={(e) => setValue(e.target.value)} value={value} />
           </Form>
         ) : (
-          <Headline as="a" href={submission.url} target="_blank" rel="noopener">
-            {submission.title}
-          </Headline>
+          <>
+            <SubmissionIcon url={submission.url} />
+
+            <Headline
+              as="a"
+              href={submission.url}
+              target="_blank"
+              rel="noopener"
+            >
+              {submission.title}
+            </Headline>
+          </>
         )}
       </TextWrapper>
 

@@ -1,6 +1,6 @@
 import { styled } from "../../styles";
 
-const StyledGenerativeIcon = styled("svg", {
+const StyledSubmissionIcon = styled("svg", {
 	variants: {
     size: {
       s: {
@@ -19,4 +19,4 @@ const StyledGenerativeIcon = styled("svg", {
   },
 });
 
-export { StyledGenerativeIcon };
+export { StyledSubmissionIcon };
