@@ -17,6 +17,7 @@ const Home = () => {
         itemsPerPage={20}
         startIndex={lastIndex}
         onIndexChange={(index) => {
+          window.scrollTo(0, 0);
           lastIndex = index;
         }}
         items={submissions.map((submission) => (
