@@ -31,6 +31,7 @@ const StyledSubmissionCard = styled("div", {
   backgroundColor: "$colors$grayDark",
   minHeight: "7rem",
   overflow: "hidden",
+	gap: "$space$2",
 
   [`& ${StyledButtonRound}`]: {
     color: "$black",
@@ -46,6 +47,16 @@ const StyledSubmissionCard = styled("div", {
       transform: "translateY(0)",
     },
   },
+
+  "@bpMobile": {
+    flexDirection: "column",
+		alignItems: "flex-start",
+
+    [`& ${StyledButtonRound}`]: {
+      opacity: 1,
+      transform: "initial",
+    },
+  },
 });
 
 const TextWrapper = styled("div", {
@@ -56,10 +67,10 @@ const TextWrapper = styled("div", {
   zIndex: 2,
   wordBreak: "break-word",
 });
+
 const ButtonWrapper = styled("div", {
   display: "flex",
   gap: "$space$2",
-  marginLeft: "$space$2",
   flexShrink: 0,
   zIndex: 2,
 });

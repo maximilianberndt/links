@@ -26,6 +26,10 @@ const { styled, css } = createStitches({
       sans: "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif",
     },
   },
+
+	media: {
+    bpMobile: '(max-width: 769px)',
+  },
 });
 
 const globalStyles = globalCss({
