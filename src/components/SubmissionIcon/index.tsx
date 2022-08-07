@@ -4,6 +4,7 @@ import { StyledSubmissionIcon } from "./styles";
 
 import { arrayPick } from "../../utils/arrayPick";
 import { prng } from "../../utils/prng";
+import { generateId } from "../../utils/generateId";
 
 interface SubmissionIconI {
   url: string;
@@ -17,6 +18,8 @@ const generateColor = (seed: string) => arrayPick(colors, prng(seed));
  * Generate a custom icon based on an input url
  */
 const SubmissionIcon = ({ url = "" }: SubmissionIconI) => {
+  const id = useMemo(generateId, []);
+
   // Fill color
   const fills: string[] = useMemo(() => {
     return [
@@ -45,17 +48,17 @@ const SubmissionIcon = ({ url = "" }: SubmissionIconI) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <clipPath id="clipPath">
+      <clipPath id={`clip-${id}`}>
         <circle cx="50" cy="50" r="45" />
       </clipPath>
 
-      <filter id="blur">
+      <filter id={`filter-${id}`}>
         <feGaussianBlur stdDeviation="25" />
       </filter>
 
       <g
-        filter="url(#blur)"
-        clipPath="url(#clipPath)"
+        clipPath={`url(#clip-${id})`}
+        filter={`url(#filter-${id})`}
         transform={`rotate(${rotation} 50 50)`}
       >
         <rect width="100%" height="100%" fill="#b9b9ba" />
