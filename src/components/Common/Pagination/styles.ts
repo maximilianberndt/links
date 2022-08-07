@@ -7,18 +7,18 @@ const StyledPagination = styled("div", {
   gap: "$space$2",
 });
 
-const PaginationButton = styled(StyledButtonRound, {
-  fontWeight: "bold",
-});
+const PaginationButton = styled(StyledButtonRound, {});
 
 const PrevButton = styled(StyledButtonRound, {
   svg: {
+    $$iconSize: "$space$2",
     transform: "rotate(-90deg)",
   },
 });
 
 const NextButton = styled(StyledButtonRound, {
   svg: {
+    $$iconSize: "$space$2",
     transform: "rotate(90deg)",
   },
 });

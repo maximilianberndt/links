@@ -5,6 +5,19 @@ import { StyledInput } from "../Common/Input/styles";
 const DeleteButton = styled(StyledButtonRound, {
   svg: {
     transform: "rotate(45deg)",
+    $$iconSize: "$space$2",
+  },
+});
+
+const ViewButton = styled(StyledButtonRound, {
+  svg: {
+    $$iconSize: "$space$3",
+  },
+});
+
+const EditButton = styled(StyledButtonRound, {
+  svg: {
+    $$iconSize: "$space$2_5",
   },
 });
 
@@ -38,7 +51,7 @@ const StyledSubmissionCard = styled("div", {
 const TextWrapper = styled("div", {
   display: "grid",
   gridAutoFlow: "column",
-	alignItems: "center",
+  alignItems: "center",
   gap: "$space$1",
   zIndex: 2,
 });
@@ -73,5 +86,7 @@ export {
   ButtonWrapper,
   Link,
   DeleteButton,
+  ViewButton,
+  EditButton,
   Form,
 };

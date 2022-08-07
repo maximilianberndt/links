@@ -11,6 +11,7 @@ const { styled, css } = createStitches({
     space: {
       1: "0.4rem",
       2: "0.8rem",
+			"2_5": "1.2rem",
       3: "1.6rem",
       4: "2.4rem",
       5: "3.2rem",

@@ -16,6 +16,7 @@ const ButtonWrapper = styled("div", {
 
 const AddButton = styled(StyledButtonRound, {
 	fontWeight: "bold",
+	$$iconSize: "$space$2",
 })
 
 const Input = styled("input", {

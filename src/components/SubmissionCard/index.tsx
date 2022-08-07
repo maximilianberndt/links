@@ -5,12 +5,13 @@ import { ReactComponent as Plus } from "../../../public/icons/plus.svg";
 import { ReactComponent as Eye } from "../../../public/icons/eye.svg";
 import { ReactComponent as Pen } from "../../../public/icons/pen.svg";
 
-
 import {
   StyledSubmissionCard,
   TextWrapper,
   ButtonWrapper,
   DeleteButton,
+  ViewButton,
+  EditButton,
   Form,
 } from "./styles";
 import { Headline } from "../Common/Headline";
@@ -79,7 +80,7 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
       </TextWrapper>
 
       <ButtonWrapper>
-        <ButtonRound
+        <ViewButton
           as={Link}
           to={`/submission/${submission.id}`}
           css={{
@@ -87,16 +88,16 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
           }}
         >
           <Eye />
-        </ButtonRound>
+        </ViewButton>
 
-        <ButtonRound
+        <EditButton
           onClick={toggleEdit}
           css={{
             "--transition-delay": "0.08s",
           }}
         >
           <Pen />
-        </ButtonRound>
+        </EditButton>
 
         <DeleteButton
           size="m"

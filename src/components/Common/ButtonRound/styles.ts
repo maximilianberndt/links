@@ -7,9 +7,7 @@ export const StyledButtonRound = styled("button", {
   background: "$colors$white",
 
 	svg: {
-		width: "$space$3",
-		height: "$space$3",
-		// objectFit: "fill",
+		width: "$$iconSize"
 	},
 
   variants: {
