@@ -1,4 +1,5 @@
 import { styled } from "../../../styles";
+import { StyledButtonRound } from "../ButtonRound/styles";
 
 const StyledPagination = styled("div", {
   display: "flex",
@@ -6,4 +7,8 @@ const StyledPagination = styled("div", {
   gap: "$space$2",
 });
 
-export { StyledPagination };
+const PaginationButton = styled(StyledButtonRound, {
+	fontWeight: "bold"
+})
+
+export { StyledPagination, PaginationButton };
