@@ -32,9 +32,10 @@ const submissionService = create<SubmissionServiceI>((set, get) => {
 
   const sanitizeUrl = (url: string): string => {
     if (!url) return "";
-    url = url.trim();
+		// Remove blanks and make lowercase
+    url = url.trim().toLowerCase().replace(" ", "");
 
-		// Add "http://" to the start of the url if there is none
+    // Add "http://" to the start of the url if there is none
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
       url = `http://${url}`;
     }
