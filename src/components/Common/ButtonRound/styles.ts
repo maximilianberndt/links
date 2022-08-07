@@ -5,6 +5,7 @@ export const StyledButtonRound = styled("button", {
   placeItems: "center",
   borderRadius: "100%",
   background: "$colors$white",
+	colors: "$colors$black",
 
 	svg: {
 		width: "$$iconSize"
