@@ -54,6 +54,7 @@ const TextWrapper = styled("div", {
   alignItems: "center",
   gap: "$space$1",
   zIndex: 2,
+  wordBreak: "break-word",
 });
 const ButtonWrapper = styled("div", {
   display: "flex",

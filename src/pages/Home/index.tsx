@@ -14,7 +14,7 @@ const Home = () => {
       <SubmissionInput />
 
       <PaginatedList
-        itemsPerPage={1}
+        itemsPerPage={3}
         startIndex={lastIndex}
         onIndexChange={(index) => {
           lastIndex = index;

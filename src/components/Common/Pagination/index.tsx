@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import { ReactComponent as Chevron } from "../../../../public/icons/chevron.svg";
 
@@ -13,14 +13,12 @@ interface PaginationI {
   maxItems: number;
   currentIndex: number;
   setIndex: Function;
-  maxPaginationDots?: number;
 }
 
 const Pagination = ({
   maxItems,
   currentIndex,
   setIndex,
-  maxPaginationDots = 3,
 }: PaginationI) => {
   const previous = () => {
     setIndex((index: number) => Math.max(index - 1, 0));
@@ -30,21 +28,30 @@ const Pagination = ({
     setIndex((index: number) => Math.min(index + 1, maxItems - 1));
   };
 
-  // Calculate the current
+  // Calculate the current number of dots
   const paginationDots: number[] = useMemo(() => {
     const data = [];
 
+		// Start one before the current index
     let start = Math.max(currentIndex - 1, 0);
-    let end = Math.min(start + maxPaginationDots - 1, maxItems - 1);
+
+		// end one after the current index
+    let end = Math.min(start + 2, maxItems - 1);
 
     for (let i = start; i <= end; i++) {
       data.push(i);
     }
 
     return data;
-  }, [currentIndex]);
+  }, [currentIndex, maxItems]);
 
-  if (maxItems === 1) return null;
+  useEffect(() => {
+    // If the last item on the last page gets deleted we go back by one
+    // to display the previous page
+    if (currentIndex === maxItems) previous();
+  }, [maxItems]);
+
+  if (maxItems == 0) return null;
 
   return (
     <StyledPagination>

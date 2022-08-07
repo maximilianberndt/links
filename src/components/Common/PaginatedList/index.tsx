@@ -33,8 +33,6 @@ const PaginatedList = ({
     if (onIndexChange) onIndexChange(currentIndex);
   }, [currentIndex]);
 
-  if (!currentItems?.length) return null;
-
   return (
     <StyledPaginatedList>
       <List>
