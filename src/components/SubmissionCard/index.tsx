@@ -1,3 +1,11 @@
+import { useState, FormEvent } from "react";
+import { Link } from "react-router-dom";
+
+import { ReactComponent as Plus } from "../../../public/icons/plus.svg";
+import { ReactComponent as Eye } from "../../../public/icons/eye.svg";
+import { ReactComponent as Pen } from "../../../public/icons/pen.svg";
+
+
 import {
   StyledSubmissionCard,
   TextWrapper,
@@ -10,11 +18,8 @@ import {
   submissionService,
   SubmissionT,
 } from "../../services/submissionService";
-import { Svg } from "../Common/Svg";
-import { useState, FormEvent } from "react";
 import { ButtonRound } from "../Common/ButtonRound";
 import { Input } from "../Common/Input";
-import { Link } from "react-router-dom";
 import { SubmissionIcon } from "../SubmissionIcon";
 
 interface SubmissionCardI {
@@ -81,7 +86,7 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
             "--transition-delay": "0.04s",
           }}
         >
-          <Svg icon="eye" width={2} height={2} />
+          <Eye />
         </ButtonRound>
 
         <ButtonRound
@@ -90,7 +95,7 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
             "--transition-delay": "0.08s",
           }}
         >
-          Edit
+          <Pen />
         </ButtonRound>
 
         <DeleteButton
@@ -100,7 +105,7 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
             "--transition-delay": "0.12s",
           }}
         >
-          <Svg icon="plus" />
+          <Plus />
         </DeleteButton>
       </ButtonWrapper>
     </StyledSubmissionCard>

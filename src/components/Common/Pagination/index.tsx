@@ -1,6 +1,13 @@
-import { ButtonRound } from "../ButtonRound";
-import { StyledPagination, PaginationButton } from "./styles";
 import { useMemo } from "react";
+
+import { ReactComponent as Chevron } from "../../../../public/icons/chevron.svg";
+
+import {
+  StyledPagination,
+  PaginationButton,
+  PrevButton,
+  NextButton,
+} from "./styles";
 
 interface PaginationI {
   maxItems: number;
@@ -41,9 +48,9 @@ const Pagination = ({
 
   return (
     <StyledPagination>
-      <ButtonRound size="s" onClick={previous}>
-        {"<"}
-      </ButtonRound>
+      <PrevButton size="s" onClick={previous}>
+        <Chevron />
+      </PrevButton>
 
       {paginationDots.map((index) => (
         <PaginationButton
@@ -59,9 +66,9 @@ const Pagination = ({
         </PaginationButton>
       ))}
 
-      <ButtonRound size="s" onClick={next}>
-        {">"}
-      </ButtonRound>
+      <NextButton size="s" onClick={next}>
+        <Chevron />
+      </NextButton>
     </StyledPagination>
   );
 };

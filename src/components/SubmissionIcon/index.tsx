@@ -1,7 +1,9 @@
 import { useMemo } from "react";
+
+import { StyledSubmissionIcon } from "./styles";
+
 import { arrayPick } from "../../utils/arrayPick";
 import { prng } from "../../utils/prng";
-import { StyledSubmissionIcon } from "./styles";
 
 interface SubmissionIconI {
   url: string;

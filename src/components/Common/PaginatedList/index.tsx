@@ -1,6 +1,8 @@
 import { ReactElement, useEffect, useMemo, useState } from "react";
-import { Pagination } from "../Pagination";
+
 import { StyledPaginatedList, List, ListItem } from "./styles";
+
+import { Pagination } from "../Pagination";
 
 interface PaginatedListI {
   items: ReactElement[];

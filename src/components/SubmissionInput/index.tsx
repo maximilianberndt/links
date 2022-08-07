@@ -1,8 +1,10 @@
+import { useState, FormEvent } from "react";
+import { ReactComponent as Plus } from "../../../public/icons/plus.svg";
+
 import { StyledSubmissionInput, ButtonWrapper, AddButton } from "./styles";
+
 import { Input } from "../../components/Common/Input";
 import { submissionService } from "../../services/submissionService";
-import { useState, FormEvent } from "react";
-import { Svg } from "../Common/Svg";
 
 const SubmissionInput = () => {
   const [value, setValue] = useState("");
@@ -41,7 +43,7 @@ const SubmissionInput = () => {
             cursor: canSubmit ? "pointer" : "not-allowed",
           }}
         >
-          <Svg icon="plus" />
+          <Plus />
         </AddButton>
       </ButtonWrapper>
     </StyledSubmissionInput>

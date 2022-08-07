@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+
 import { SubmissionIcon } from "../../components/SubmissionIcon";
-import { submissionService } from "../../services/submissionService";
+
 import {
   StyledDetail,
   Subheadline,
@@ -9,6 +10,8 @@ import {
   StyledLink,
   TextWrapper,
 } from "./styles";
+
+import { submissionService } from "../../services/submissionService";
 
 const Detail = () => {
   const params = useParams();

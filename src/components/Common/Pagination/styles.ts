@@ -8,7 +8,19 @@ const StyledPagination = styled("div", {
 });
 
 const PaginationButton = styled(StyledButtonRound, {
-	fontWeight: "bold"
-})
+  fontWeight: "bold",
+});
 
-export { StyledPagination, PaginationButton };
+const PrevButton = styled(StyledButtonRound, {
+  svg: {
+    transform: "rotate(-90deg)",
+  },
+});
+
+const NextButton = styled(StyledButtonRound, {
+  svg: {
+    transform: "rotate(90deg)",
+  },
+});
+
+export { StyledPagination, PaginationButton, PrevButton, NextButton };

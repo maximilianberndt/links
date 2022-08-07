@@ -1,11 +1,11 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import { StyledApp } from "./styles";
 import { globalStyles } from "../../styles";
+
 import { Headline } from "../Common/Headline";
 import { Home } from "../../pages/Home";
 import { Detail } from "../../pages/Detail";
-import { Svgs } from "../Svgs";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 const App = () => {
   globalStyles();
@@ -13,7 +13,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <StyledApp>
-        <Svgs />
         <Headline as="h1">Phantom Links</Headline>
 
         <main>

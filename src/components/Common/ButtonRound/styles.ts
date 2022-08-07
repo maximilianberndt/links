@@ -6,6 +6,12 @@ export const StyledButtonRound = styled("button", {
   borderRadius: "100%",
   background: "$colors$white",
 
+	svg: {
+		width: "$space$3",
+		height: "$space$3",
+		// objectFit: "fill",
+	},
+
   variants: {
     size: {
       s: {
