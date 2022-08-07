@@ -20,26 +20,28 @@ const generateColor = (seed: string) => arrayPick(colors, prng(seed));
 const SubmissionIcon = ({ url = "" }: SubmissionIconI) => {
   const id = useMemo(generateId, []);
 
-  // Fill color
-  const fills: string[] = useMemo(() => {
-    return [
+  const { fills, rotation, offset } = useMemo(() => {
+    const randomNumber = prng(url);
+
+    // Rotate the whole shape
+    const rotation = randomNumber * 360;
+
+    // Offset each circle position from it's center
+    const x = (0.5 - randomNumber) * 80;
+    const y = randomNumber > 0.5 ? x * 0.8 : -x;
+
+    const fills = [
       generateColor(url),
       generateColor(url.length.toString()),
       generateColor(url.split("/").length.toString()),
+			generateColor(url.split(".").toString()),
     ];
-  }, [url]);
 
-  // Rotate the whole shape
-  const rotation = useMemo(() => prng(url) * 360, [url]);
-
-  // Offset each circle position from it's center
-  const offset = useMemo(() => {
-    const randomNumber = prng(url);
-
-    const x = (0.5 - prng(url)) * 80;
-    const y = randomNumber > 0.5 ? x * 0.8 : -x;
-
-    return { x, y };
+    return {
+      rotation,
+      offset: { x, y },
+      fills,
+    };
   }, [url]);
 
   return (
@@ -66,12 +68,7 @@ const SubmissionIcon = ({ url = "" }: SubmissionIconI) => {
         <circle cx={10 + offset.x} cy={50 + offset.y} r="30" fill={fills[0]} />
         <circle cx={90 + offset.x} cy={50 + offset.y} r="30" fill={fills[1]} />
         <circle cx={50 + offset.x} cy={90 + offset.y} r="30" fill={fills[2]} />
-        <circle
-          cx={50 + offset.x}
-          cy={10 + offset.y}
-          r="30"
-          fill={arrayPick(fills, prng(url))}
-        />
+        <circle cx={50 + offset.x} cy={10 + offset.y} r="30" fill={fills[3]} />
       </g>
     </StyledSubmissionIcon>
   );
