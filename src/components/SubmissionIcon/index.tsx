@@ -10,7 +10,7 @@ interface SubmissionIconI {
   url: string;
 }
 
-const colors = ["#5EFC8D", "#235789", "#FF579f", "#1CCAD8", "#561643"];
+const colors = ["#FF8811", "#235789", "#FF579f", "#1CCAD8", "#561643"];
 
 const generateColor = (seed: string) => arrayPick(colors, prng(seed));
 
@@ -34,7 +34,7 @@ const SubmissionIcon = ({ url = "" }: SubmissionIconI) => {
       generateColor(url),
       generateColor(url.length.toString()),
       generateColor(url.split("/").length.toString()),
-			generateColor(url.split(".").toString()),
+      generateColor(url.split(".").toString()),
     ];
 
     return {
