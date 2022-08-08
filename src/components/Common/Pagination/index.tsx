@@ -15,11 +15,7 @@ interface PaginationI {
   setIndex: Function;
 }
 
-const Pagination = ({
-  maxItems,
-  currentIndex,
-  setIndex,
-}: PaginationI) => {
+const Pagination = ({ maxItems, currentIndex, setIndex }: PaginationI) => {
   const previous = () => {
     setIndex((index: number) => Math.max(index - 1, 0));
   };
@@ -32,10 +28,10 @@ const Pagination = ({
   const paginationDots: number[] = useMemo(() => {
     const data = [];
 
-		// Start one before the current index
+    // Start one before the current index
     let start = Math.max(currentIndex - 1, 0);
 
-		// end one after the current index
+    // end one after the current index
     let end = Math.min(start + 2, maxItems - 1);
 
     for (let i = start; i <= end; i++) {
@@ -62,9 +58,7 @@ const Pagination = ({
       {paginationDots.map((index) => (
         <PaginationButton
           key={index}
-          css={{
-            backgroundColor: currentIndex === index ? "$white" : "$grayLight",
-          }}
+          selected={currentIndex === index}
           onClick={() => {
             setIndex(index);
           }}

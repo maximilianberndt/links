@@ -5,12 +5,11 @@ export const StyledButtonRound = styled("button", {
   placeItems: "center",
   borderRadius: "100%",
   background: "$colors$white",
-	color: "$colors$black",
+  color: "$colors$black",
 
-	svg: {
-		width: "$$iconSize"
-	},
-
+  svg: {
+    width: "$$iconSize",
+  },
   variants: {
     size: {
       s: {
@@ -20,6 +19,12 @@ export const StyledButtonRound = styled("button", {
       m: {
         width: "$space$5",
         height: "$space$5",
+      },
+    },
+		disabled: {
+      true: {
+        opacity: 0.5,
+				cursor: "not-allowed"
       },
     },
   },

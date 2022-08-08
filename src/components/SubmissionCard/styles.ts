@@ -31,7 +31,7 @@ const StyledSubmissionCard = styled("div", {
   backgroundColor: "$colors$grayDark",
   minHeight: "7rem",
   overflow: "hidden",
-	gap: "$space$2",
+  gap: "$space$2",
 
   [`& ${StyledButtonRound}`]: {
     color: "$black",
@@ -50,7 +50,7 @@ const StyledSubmissionCard = styled("div", {
 
   "@bpMobile": {
     flexDirection: "column",
-		alignItems: "flex-start",
+    alignItems: "flex-start",
 
     [`& ${StyledButtonRound}`]: {
       opacity: 1,
@@ -66,6 +66,14 @@ const TextWrapper = styled("div", {
   gap: "$space$1",
   zIndex: 2,
   wordBreak: "break-word",
+
+  variants: {
+    isEdit: {
+      true: {
+        flexGrow: 1,
+      },
+    },
+  },
 });
 
 const ButtonWrapper = styled("div", {

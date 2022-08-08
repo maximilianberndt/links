@@ -54,11 +54,7 @@ const SubmissionCard = ({ submission }: SubmissionCardI) => {
 
   return (
     <StyledSubmissionCard onMouseLeave={() => setIsEdit(false)}>
-      <TextWrapper
-        css={{
-          flexGrow: isEdit ? 1 : 0,
-        }}
-      >
+      <TextWrapper isEdit={isEdit}>
         {isEdit ? (
           <Form onSubmit={edit}>
             <Input onChange={(e) => setValue(e.target.value)} value={value} />

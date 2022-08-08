@@ -7,7 +7,17 @@ const StyledPagination = styled("div", {
   gap: "$space$2",
 });
 
-const PaginationButton = styled(StyledButtonRound, {});
+const PaginationButton = styled(StyledButtonRound, {
+  backgroundColor: "$grayLight",
+
+  variants: {
+    selected: {
+      true: {
+        backgroundColor: "$white",
+      },
+    },
+  },
+});
 
 const PrevButton = styled(StyledButtonRound, {
   svg: {

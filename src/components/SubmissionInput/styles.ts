@@ -7,24 +7,29 @@ const StyledSubmissionInput = styled("form", {
   justifyContent: "space-between",
   alignItems: "center",
   padding: "$space$3",
+  gap: "$space$2",
+
+  "@bpMobile": {
+    flexDirection: "row-reverse",
+    padding: "$space$2 0 $space$3",
+  },
 });
 
 const ButtonWrapper = styled("div", {
-	marginLeft: "$space$2",
-	flexShrink: 0,
+  flexShrink: 0,
 });
 
 const AddButton = styled(StyledButtonRound, {
-	fontWeight: "bold",
-	$$iconSize: "$space$2",
-})
+  fontWeight: "bold",
+  $$iconSize: "$space$2",
+});
 
 const Input = styled("input", {
   padding: "$space$1",
   backgroundColor: "$black",
   color: "$grayLight",
   fontSize: "$fontSizes$1",
-	flexGrow: 1,
+  flexGrow: 1,
 
   "&::placeholder": {
     color: "$grayLight",

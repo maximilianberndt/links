@@ -36,13 +36,7 @@ const SubmissionInput = () => {
       />
 
       <ButtonWrapper>
-        <AddButton
-          onClick={add}
-          type="submit"
-          css={{
-            cursor: canSubmit ? "pointer" : "not-allowed",
-          }}
-        >
+        <AddButton onClick={add} type="submit" disabled={!canSubmit}>
           <Plus />
         </AddButton>
       </ButtonWrapper>
