@@ -1,6 +1,6 @@
 import { styled } from "../../../styles";
 
-export const StyledButtonRound = styled("button", {
+const StyledButtonRound = styled("button", {
   display: "grid",
   placeItems: "center",
   borderRadius: "100%",
@@ -21,10 +21,10 @@ export const StyledButtonRound = styled("button", {
         height: "$space$5",
       },
     },
-		disabled: {
+    disabled: {
       true: {
         opacity: 0.5,
-				cursor: "not-allowed"
+        cursor: "not-allowed",
       },
     },
   },
@@ -33,3 +33,5 @@ export const StyledButtonRound = styled("button", {
     size: "m",
   },
 });
+
+export { StyledButtonRound };

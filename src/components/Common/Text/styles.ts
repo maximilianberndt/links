@@ -1,5 +1,7 @@
 import { styled } from "../../../styles";
 
-export const StyledText = styled("p", {
-	fontSize: "$fontSizes$1"
+const StyledText = styled("p", {
+  fontSize: "$fontSizes$1",
 });
+
+export { StyledText };

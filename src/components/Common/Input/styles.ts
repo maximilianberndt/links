@@ -1,13 +1,15 @@
 import { styled } from "../../../styles";
 
-export const StyledInput = styled("input", {
+const StyledInput = styled("input", {
   background: "transparent",
-	color: "$grayLight",
+  color: "$grayLight",
   fontSize: "$fontSizes$1",
-	flexGrow: 1,
+  flexGrow: 1,
 
   "&::placeholder": {
     color: "$grayLight",
     fontSize: "$fontSizes$1",
   },
 });
+
+export { StyledInput };
