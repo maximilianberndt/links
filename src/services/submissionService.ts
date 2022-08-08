@@ -23,6 +23,9 @@ const fallbackData = [
   },
 ];
 
+/**
+ * Saves all the links that are submitted by the user
+ */
 const submissionService = create<SubmissionServiceI>((set, get) => {
   const submissions = localStorage.get("submissions");
 

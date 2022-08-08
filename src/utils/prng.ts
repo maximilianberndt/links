@@ -23,7 +23,9 @@ const mulberry32 = (a) => {
   return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
 };
 
-// Generate a pseudo random number that will always return the same value for the same input
+/**
+ * Generate a pseudo random number that will always return the same value for the same input
+ */
 const prng = (seed: string): number => mulberry32(xmur3(seed)());
 
 export { prng };

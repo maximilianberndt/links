@@ -36,7 +36,6 @@ const StyledSubmissionCard = styled("div", {
   [`& ${StyledButtonRound}`]: {
     color: "$black",
     transition: "opacity 0.2s, transform 0.3s",
-    transitionDelay: "var(--transition-delay)",
     opacity: 0,
     transform: "translateY(25%)",
   },
@@ -45,6 +44,7 @@ const StyledSubmissionCard = styled("div", {
     [`& ${StyledButtonRound}`]: {
       opacity: 1,
       transform: "translateY(0)",
+			transitionDelay: "var(--transition-delay)",
     },
   },
 
