@@ -10,7 +10,7 @@
 - Links that are submitted by the user will be processed in the SubmissionService. It exposes an add, edit and delete function and handles validation internally
 - For every link a custom icon is crated based on the url
 	- A pseudo random number generator is used to generate paramters like color, rotation and position. This means that given the same seed the same icon can be reproduced, which will guarantee a consitent appearance even whenn reloading the page
-	- The concept could be expanded to include animation and more variation
+	- The concept could be expanded to include animation and more variation as well
 
 ## Limitations
 
